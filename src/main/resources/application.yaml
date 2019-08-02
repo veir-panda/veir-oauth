@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/veir-oauth?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: veir
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  security:
+    user:
+      name: admin
+      password: 123456
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:8082
+  application:
+    name: "oauth-demo"
+management:
+  endpoints:
+    web:
+#      base-path: /monitor
+      exposure:
+        include: "*"
